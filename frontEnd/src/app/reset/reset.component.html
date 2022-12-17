@@ -1,0 +1,57 @@
+
+<div class="container">
+    <h1 class="text-primary text-center">Reset your password</h1>
+    <div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</div>
+
+    <form  [formGroup]="form3" >
+       
+          <!-- <div class="mb-3">
+            <label for="_id" class="form-label">Your Id</label>
+            <input type="text" class="form-control" id="_id" placeholder="Enter Id" formControlName="_id">
+          </div>
+          <div class="alert alert-danger" *ngIf="form3.controls['_id'].errors?.['required'] &&  (form3.controls['_id'].dirty || form3.controls['_id'].touched )">
+            User Name is required 
+          </div> -->
+
+          <!-- <div class="mb-3">
+            <label for="password" class="form-label">New Password </label>
+            <input type="password" class="form-control" id="pass" placeholder="Enter Your New Password" formControlName="password" (keyup)="matchPassword()" #password>
+          </div> -->
+          <div class="mb-3">
+            <label for="password" class="form-label">New Password </label>
+            <input type="password" class="form-control" id="pass" placeholder="Enter Your New Password" formControlName="password">
+          </div>
+          <div class="alert alert-danger" *ngIf="form3.controls['password'].errors?.['required'] && showError">
+            Password is required 
+          </div>
+       
+
+          <!-- <div class="mb-3">
+            <label for="" class="form-label">Confirm Password </label>
+            <input type="password" class="form-control" id="" placeholder="Enter Your New Password" formControlName="confirmPassword" (keyup)="matchPassword()" #confPassword>
+          </div>
+          <div *ngIf="!passwordMatch" class = "alert alert-danger">
+            Password does not match
+          </div> -->
+
+          <div class="mb-3">
+            <label for="" class="form-label">Confirm Password </label>
+            <input type="password" class="form-control" id="" placeholder="Enter Your New Password" formControlName="confirmPassword" >
+          </div>
+          <div class="alert alert-danger" *ngIf="form3.controls['confirmPassword'].errors?.['required'] && showError ">
+            Confirm Password is required 
+          </div>
+          <div class="alert alert-danger" *ngIf="form3.controls['confirmPassword'].errors?.['MustMatch']">
+            Password does not match
+          </div>
+   
+
+          
+          <div class="mb-3">
+            <button class="btn btn-primary"  (click)="onclick1()">Reset</button>
+          </div>
+          <div class="mb-3">
+            <a routerLink="/signin">Sign In now</a>
+          </div>
+    </form>
+</div>

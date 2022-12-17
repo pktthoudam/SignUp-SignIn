@@ -1,0 +1,10 @@
+<div class="container">
+  <!-- <div class="alert alert-info" *ngIf="verifyInProgress">Verify in progress</div> -->
+  <div class="alert alert-success" *ngIf="verified">
+    <div *ngIf="!message">
+      Verified successfully. Please login <a href="http://localhost:4200/signin">here&nbsp;</a>to continue.
+    </div>
+    <div *ngIf="message">{{message}}</div>
+  </div>
+  <div class="alert alert-info" *ngIf="error">Fail to verify.</div>
+</div>

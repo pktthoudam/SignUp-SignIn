@@ -1,0 +1,29 @@
+<div class="container">
+    <h1 class="text-primary text-center">Sign In</h1>
+
+    <br>
+    <div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</div>
+    <div class="alert alert-success" *ngIf="successMessage">{{successMessage}}</div>
+    <br>
+
+    <form action="" [formGroup]="form1" >
+       
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Your Email Id</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter Your Email Id" formControlName="email">
+          </div>
+
+          <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Your Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter Your Password" formControlName="password">
+          </div>
+          <div class="mb-3">
+            <a routerLink="/forgot">Forgot Password ?</a>
+          </div>
+          <div class="mb-3">
+            <button class="btn btn-primary" (click)="onclick()">Sign In</button>
+          </div>
+          <a routerLink="/signup">click here to Sign Up</a>
+    </form>
+</div>
+

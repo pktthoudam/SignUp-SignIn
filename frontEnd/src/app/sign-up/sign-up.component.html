@@ -1,0 +1,46 @@
+<div class="container">
+  <h1 class="text-primary text-center">Sign Up</h1>
+  <div class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</div>
+  <div class="alert alert-success" *ngIf="successMessage">{{successMessage}}</div>
+
+  <br>
+
+  <form [formGroup]="form" class="border">
+    <div class="mb-3">
+      <label for="name" class="form-label">Your Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Enter Your Name" formControlName="name">
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Your Email Id</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter Your Email Id" formControlName="email">
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Your Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Enter Your Password"
+        formControlName="password">
+    </div>
+
+    <!-- <div class="mb-3">
+            <label for="formGroupExampleInput2" class="form-label">Confirm Your Password</label>
+            <input type="password" class="form-control" id="formGroupExampleInput2" placeholder="Confirm Your Password" formControlName="confirmPassword">
+          </div>
+          <div class="err-msg" *ngIf="form.controls['confirmPassword'].hasError('required') && submitted">*Confirm
+            Password is required
+          </div>
+          <div class="err-msg" *ngIf="form.controls['confirmPassword'].hasError('mustMatch') && submitted">*Password
+            must match</div> -->
+
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary" (click)="Submit()">Submit</button>
+    </div>
+    <div class="mb-3">
+      <a routerLink="/signin">Already Sign Up click here to Sign In</a> &nbsp; <br>
+    </div>
+   
+
+  </form>
+  <div class="card-block">
+    <asl-google-signin-button type="standard" size="large" class="btn btn-warning" (click)="GoogelSignIn()" ></asl-google-signin-button>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="container">
+  <h1>Dashboard</h1>
+</div>
+<!-- <div class="container">
+  <div class="card-block">
+
+    <asl-google-signin-button type="standard" size="large" (click)="GoogleSignIn()"> </asl-google-signin-button>
+
+
+  </div>
+</div> -->
+
+<!-- <div class="container">
+
+  <div class="card-block" *ngIf="isSignin">
+    <img src="{{user.photoUrl}}" alt="" srcset="">
+    <h2 class="card-title">Id: {{user.id}}</h2>
+    <h2 class="card-title">User Name: {{user.name}}</h2>
+    <h2 class="card-title">Email: {{user.email}}</h2>
+  </div>
+
+  <div class="card-block" *ngIf="isSignin">
+    <button class="btn btn-danger" (click)="GooglesignOut()"> sign out</button>
+  </div>
+
+</div> -->
+
+<div class="container">
+  <div *ngIf="isLoggedIn()">
+    <div class="container">Hi and welcome!</div>
+    <div class="container">Name: {{ userInfo?.info?.name }}</div>
+    <div class="container"><img src="{{ userInfo?.info?.picture }}"></div>
+    <!-- <div class="container">
+      <button (click)="getEmails()">List Emails</button>
+    </div>
+    <div class="container" *ngFor="let snippet of mailSnippets">
+      {{ snippet }}
+    </div> -->
+    <div class="container">
+      <button (click)="logout()">Logout from Google</button>
+    </div>
+  </div>
+</div>
